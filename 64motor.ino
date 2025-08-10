@@ -1,28 +1,28 @@
 // ************ DEFINITIONS************ digital filter/3200  low pass
-//PID
+// PID
 float kp = 6.5;
 float ki = 0.1 ;
 float kd =100;
-//腳位
+// Pin
 const byte interruptPinA = 2;
 const byte interruptPinB = 3;
 volatile unsigned long EncoderCount = 0;
 const byte PWMPin = 6;
 const byte DirPin1 = 7;
-//時間
+// Time
 unsigned long t;
 unsigned long t_prev = 0;
 volatile unsigned long count = 0;
 unsigned long count_prev = 0;
-//PID coef
+// PID coef
 float Theta, RPM, RPM_d;
 float Theta_prev = 0;
 int dt;
 float RPM_max = 50;
-//low pass coef
+// Low pass filter
 float v1Filt = 0;
 float v1Prev = 0;
-//voltage coef
+// voltage coef
 #define pi 3.1416
 float Vmax = 100;
 float Vmin = -100;
@@ -224,3 +224,4 @@ ISR(TIMER1_COMPA_vect) {
   count++;
   Serial.print(count * 0.05); Serial.print(" \t");
 }
+
