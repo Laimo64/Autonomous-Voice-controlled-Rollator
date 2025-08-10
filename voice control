@@ -1,10 +1,10 @@
 #include "Arduino.h"
-#include "BluetoothSerial.h"     //手機藍芽聲控=>顯示指令
+#include "BluetoothSerial.h"    
 #include<SoftwareSerial.h>
 BluetoothSerial BT;
 //#define RXp2 16
 //#define TXp2 17
-HardwareSerial abc(1);     //9 10腳位
+HardwareSerial abc(1);     // Pin 9 10
 SoftwareSerial abc2(16,17);
 
 
